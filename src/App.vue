@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <img width="25%" src="./assets/logo.png">
-   
     <FabricVue/>
   </div>
 </template>

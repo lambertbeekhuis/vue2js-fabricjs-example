@@ -3,10 +3,17 @@
   {{msg}}
   
   <canvas id="c"></canvas>
-  <button v-on:click="addObject" class="btn btn-primary">Add</button>
+
+  <button v-on:click="addObject" class="btn btn-primary">Add a box</button>
+
+  <button v-on:click="saveToJson" class="btn btn-primary">Save to JSON</button>
+
+  <div>{{json}}</div>
 
 
+<div>
    {{msg2}}
+   </div>
   </div>
 </template>
 
@@ -19,14 +26,14 @@ export default {
   data() {
     return {
       msg: "Integrate fabricjs with Vue2.js",
-      msg2: "End"
+      msg2: "End",
+      json: ""
     };
   },
 
   methods: {
     addObject: function() {
       // create a rectangle object
-      alert("Add a box");
 
       var rect2 = new fabric.Rect({
         left: 50,
@@ -37,6 +44,10 @@ export default {
       });
 
       this.canvas.add(rect2);
+    },
+
+    saveToJson: function() {
+      this.json = JSON.stringify(this.canvas);
     }
   },
 
